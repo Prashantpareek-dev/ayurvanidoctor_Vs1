@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>धन्यवाद! - AyurVani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e88e5;
+            --primary-dark: #0d47a1;
+            --accent-teal: #00acc1;
+            --success-green: #00c853;
+            --warning-orange: #ff6f00;
+        }
+
+        body {
+            font-family: 'Halant', serif;
+            background: linear-gradient(135deg, #0d47a1 0%, #1e88e5 60%, #00acc1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-blue), var(--accent-teal));
+        }
+
+        /* Checkmark animation */
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--success-green), #00e676);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.4);
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .check-svg {
+            width: 50px;
+            height: 50px;
+            stroke: white;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .check-path {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: drawCheck 0.5s ease 0.4s forwards;
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .thank-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            animation: fadeUp 0.5s ease 0.3s both;
+        }
+
+        .thank-subtitle {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            animation: fadeUp 0.5s ease 0.4s both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 24hr Promise Box */
+        .promise-box {
+            background: linear-gradient(135deg, #0d47a1, #1e88e5);
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.5s ease 0.5s both;
+        }
+
+        .promise-box::before {
+            content: '⏰';
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            font-size: 80px;
+            opacity: 0.12;
+        }
+
+        .promise-timer {
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffd600;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .promise-timer span {
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        .promise-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .promise-sub {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            margin-top: 6px;
+        }
+
+        /* Steps */
+        .steps {
+            text-align: left;
+            margin-bottom: 25px;
+            animation: fadeUp 0.5s ease 0.6s both;
+        }
+
+        .steps-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        /* Benefit Cards */
+        .benefit-card {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .benefit-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-card:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .benefit-card:nth-child(even) {
+            flex-direction: row;
+        }
+
+        .benefit-img-box {
+            width: 100px;
+            height: 95px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 2;
+            padding: 10px;
+        }
+
+        .benefit-card:nth-child(2) .benefit-img-box { background: linear-gradient(135deg, #1e88e5, #0d47a1); }
+        .benefit-card:nth-child(3) .benefit-img-box { background: linear-gradient(135deg, #9c27b0, #6a1b9a); }
+        .benefit-card:nth-child(4) .benefit-img-box { background: linear-gradient(135deg, #00897b, #004d40); }
+
+        .benefit-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .benefit-content {
+            flex: 1;
+            background: #f0f6ff;
+            border-radius: 14px;
+            padding: 14px 16px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .benefit-card:nth-child(odd) .benefit-content {
+            margin-right: -12px;
+            padding-right: 22px;
+        }
+
+        .benefit-card:nth-child(even) .benefit-content {
+            margin-left: -12px;
+            padding-left: 22px;
+        }
+
+        .benefit-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .benefit-card:nth-child(2) .benefit-tag { background: #1e88e5; }
+        .benefit-card:nth-child(3) .benefit-tag { background: #9c27b0; }
+        .benefit-card:nth-child(4) .benefit-tag { background: #00897b; }
+
+        .benefit-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .benefit-card:nth-child(2) .benefit-title { color: #1e88e5; }
+        .benefit-card:nth-child(3) .benefit-title { color: #9c27b0; }
+        .benefit-card:nth-child(4) .benefit-title { color: #00897b; }
+
+        .benefit-desc {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .benefit-connector {
+            position: absolute;
+            width: 3px;
+            height: 20px;
+            background: linear-gradient(to bottom, #1e88e5, #00acc1);
+            left: 48px;
+            bottom: -20px;
+            z-index: 1;
+        }
+
+        .benefit-card:nth-child(odd) .benefit-connector {
+            left: auto;
+            right: 48px;
+        }
+
+        .benefit-card:last-child .benefit-connector {
+            display: none;
+        }
+
+        /* Back button */
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--warning-orange), #ff8f00);
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Halant', serif;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeUp 0.5s ease 0.7s both;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 28px rgba(255, 111, 0, 0.6);
+        }
+
+        /* Confetti dots */
+        .confetti {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Confetti -->
+    <div class="confetti" id="confetti"></div>
+
+    <div class="container">
+        <div class="card">
+
+            <!-- Success Icon -->
+            <div class="success-icon">
+                <svg class="check-svg" viewBox="0 0 52 52">
+                    <path class="check-path" d="M14 27 L22 35 L38 19"/>
+                </svg>
+            </div>
+
+            <h1 class="thank-title">🎉 धन्यवाद!</h1>
+            <p class="thank-subtitle">
+                आपकी Free Consultation Request<br>
+                सफलतापूर्वक Submit हो गई है।
+            </p>
+
+            <!-- 24hr Promise -->
+            <div class="promise-box">
+                <div class="promise-timer">24 <span>घंटे</span></div>
+                <div class="promise-text">हमारी team आपसे connect करेगी</div>
+                <div class="promise-sub">⏰ अगले 24 घंटों में आपको call आएगी</div>
+            </div>
+
+            <!-- What you will get -->
+            <div class="steps">
+                <div class="steps-title">🎁 आपको मिलेगा — बिल्कुल Free!</div>
+
+                <div class="benefit-card">
+                    <div class="benefit-img-box">
+                        <img src="./Image/14.png" alt="Diet Chart">
+                    </div>
+                    <div class="benefit-content">
+                        <div class="benefit-tag">Free</div>
+                        <div class="benefit-title">Personalized Diet Chart</div>
+                        <div class="benefit-desc">आपकी speech problem के अनुसार Ayurvedic diet chart तैयार किया जाएगा।</div>
+                    </div>
+                    <div class="benefit-connector"></div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-img-box">
+                        <img src="./Image/12.png" alt="Therapy">
+                    </div>
+                    <div class="benefit-content">
+                        <div class="benefit-tag">Guidance</div>
+                        <div class="benefit-title">Speech Therapy Plan</div>
+                        <div class="benefit-desc">Expert द्वारा personalized therapy exercises और techniques बताई जाएंगी।</div>
+                    </div>
+                    <div class="benefit-connector"></div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-img-box">
+                        <img src="./Image/16.png" alt="Expert Report">
+                    </div>
+                    <div class="benefit-content">
+                        <div class="benefit-tag">Ongoing</div>
+                        <div class="benefit-title">Expert Analysis Report</div>
+                        <div class="benefit-desc">समय-समय पर Ayurvedic Health Expert आपकी progress का analysis करेंगे।</div>
+                    </div>
+                    <div class="benefit-connector"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Generate confetti dots
+        const colors = ['#1e88e5', '#ffd600', '#00c853', '#ff6f00', '#9c27b0', '#00acc1'];
+        const confettiEl = document.getElementById('confetti');
+
+        for (let i = 0; i < 30; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.style.left = Math.random() * 100 + 'vw';
+            dot.style.top = Math.random() * -20 + 'px';
+            dot.style.width = (Math.random() * 8 + 6) + 'px';
+            dot.style.height = dot.style.width;
+            dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+            dot.style.animationDuration = (Math.random() * 4 + 3) + 's';
+            dot.style.animationDelay = (Math.random() * 3) + 's';
+            confettiEl.appendChild(dot);
+        }
+    </script>
+</body>
+</html>

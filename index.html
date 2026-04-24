@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Doctor Consultation – Speech Therapy</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #1a5c2e;
+      --green-mid: #2d7d46;
+      --green-light: #4caf70;
+      --green-pale: #a8d5b5;
+      --cream: #fdf6e3;
+      --cream-dark: #f5e9c8;
+      --cream-deeper: #e8d5a0;
+      --white: #ffffff;
+      --text-dark: #1a2e1e;
+      --text-mid: #2d4a35;
+      --gold: #fdf6e3;
+      --gold-light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans Devanagari', 'Halant', serif;
+      background: #e8ede9;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      width: 100%;
+      max-width: 450px;
+      background: var(--cream);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 60%, #1e4d2b 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-top-badge {
+      background: var(--cream);
+      color: var(--green-deep);
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero-blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      top: -80px;
+      right: -100px;
+    }
+
+    .hero-blob2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+      bottom: 40px;
+      left: -60px;
+    }
+
+    .hero-inner {
+      padding: 28px 20px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Halant', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .hero-sub {
+      color: rgba(253, 246, 227, 0.85);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub li {
+      list-style: none;
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .hero-sub li::before {
+      content: '→';
+      color: var(--gold-light);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      margin: 0 -20px;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+
+    .hero-impact-line {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      color: var(--cream);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-cta-block {
+      padding: 24px 20px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      color: var(--green-deep);
+      font-family: 'Noto Sans Devanagari', serif;
+      font-size: 17px;
+      font-weight: 800;
+      text-align: center;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(253, 246, 227, 0.6);
+      transition: transform 0.15s, box-shadow 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+      border-radius: 12px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(253, 246, 227, 0.7);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .micro-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+
+    .micro-trust span {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--cream);
+      font-size: 11.5px;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .compliance {
+      text-align: center;
+      color: rgba(253, 246, 227, 0.5);
+      font-size: 10px;
+      margin-top: 12px;
+    }
+
+    /* ── OFFER STRIP ── */
+    .offer-strip {
+      background: var(--green-deep);
+      padding: 18px 16px;
+    }
+
+    .offer-strip-title {
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .offer-pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .offer-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 246, 227, 0.4);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .offer-pill:hover {
+      background: rgba(253, 246, 227, 0.15);
+      transform: scale(1.03);
+    }
+
+    .offer-pill .icon {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      padding: 36px 20px;
+      position: relative;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--green-deep);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Halant', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .section-title .accent {
+      color: var(--green-mid);
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-section {
+      background: var(--green-deep);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .problem-header {
+      padding: 32px 20px 20px;
+    }
+
+    .problem-header .section-label {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--gold-light);
+    }
+
+    .problem-header .section-title {
+      color: var(--cream);
+      font-size: 21px;
+    }
+
+    .problem-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .prob-card {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      min-height: 120px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.2s;
+    }
+
+    .prob-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .prob-card-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prob-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+      transition: transform 0.3s;
+    }
+
+    .prob-card:hover .prob-card-img img {
+      transform: scale(1.05);
+    }
+
+    .prob-card-body {
+      padding: 16px 16px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .prob-card-body p {
+      color: var(--cream);
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .prob-card-body .tag {
+      display: inline-block;
+      background: rgba(253, 246, 227, 0.25);
+      color: var(--gold-light);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .problem-impact {
+      background: var(--gold);
+      margin: 0;
+      padding: 16px 20px;
+      color: var(--green-deep);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* ── WHY SECTION ── */
+    .why-section {
+      background: var(--cream);
+      padding: 36px 20px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+    }
+
+    .why-card:active {
+      transform: scale(0.97);
+    }
+
+    .why-card-img {
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .why-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      transition: transform 0.3s;
+    }
+
+    .why-card:hover .why-card-img img {
+      transform: scale(1.08);
+    }
+
+    .why-card-body {
+      padding: 12px;
+      background: var(--white);
+    }
+
+    .why-card-body h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 4px;
+    }
+
+    .why-card-body p {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .why-note {
+      background: var(--green-deep);
+      color: var(--cream);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 16px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* ── APPROACH SECTION ── */
+    .approach-section {
+      background: var(--green-mid);
+      padding: 36px 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .approach-section::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .approach-section .section-label {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--gold-light);
+    }
+
+    .approach-section .section-title {
+      color: var(--cream);
+    }
+
+    .approach-sub {
+      color: rgba(253, 246, 227, 0.8);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .approach-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .approach-steps::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .approach-step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      align-items: flex-start;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .approach-step:hover {
+      transform: translateX(4px);
+    }
+
+    .step-num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      background: var(--cream);
+      color: var(--green-deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-top: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .step-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .step-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+      padding-top: 10px;
+    }
+
+    .step-body p {
+      font-size: 13px;
+      color: rgba(253, 246, 227, 0.8);
+      line-height: 1.6;
+    }
+
+    /* ── VALUE SECTION ── */
+    .value-section {
+      background: var(--cream-dark);
+      padding: 36px 20px;
+    }
+
+    .value-section .section-title {
+      color: var(--green-deep);
+    }
+
+    .value-items {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .value-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .value-item:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13);
+      transform: translateX(4px);
+    }
+
+    .value-item-img {
+      overflow: hidden;
+    }
+
+    .value-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+      transition: transform 0.3s;
+    }
+
+    .value-item:hover .value-item-img img {
+      transform: scale(1.08);
+    }
+
+    .value-item-body {
+      padding: 14px 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    .value-item-body p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .value-item-body p span {
+      color: var(--green-mid);
+      font-weight: 800;
+    }
+
+    .value-tag {
+      background: var(--green-deep);
+      color: var(--cream);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* ── TRUST SECTION ── */
+    .trust-section {
+      background: var(--green-deep);
+      padding: 36px 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .trust-section::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .trust-section .section-label {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--gold-light);
+    }
+
+    .trust-section .section-title {
+      color: var(--cream);
+    }
+
+    .trust-hero-img {
+      margin: 20px -20px 0;
+      position: relative;
+    }
+
+    .trust-hero-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 92%, 50% 100%, 0 92%);
+      display: block;
+    }
+
+    .trust-points {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trust-point {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .trust-point:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    .trust-point .icon {
+      width: 42px;
+      height: 42px;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .trust-point p {
+      color: var(--cream);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .trust-anti-line {
+      background: rgba(253, 246, 227, 0.15);
+      border: 1px solid rgba(253, 246, 227, 0.4);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-top: 16px;
+      color: var(--gold-light);
+      font-size: 13px;
+      text-align: center;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 240px;
+      height: 240px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .final-cta-emoji {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .final-cta h2 {
+      font-family: 'Halant', serif;
+      font-size: 24px;
+      color: var(--cream);
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .final-cta p {
+      color: rgba(253, 246, 227, 0.8);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .final-cta p strong {
+      color: var(--gold-light);
+    }
+
+    .urgency-badge {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 14px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section {
+      background: var(--cream);
+      padding: 36px 20px;
+    }
+
+    .reviews-section .section-title {
+      color: var(--green-deep);
+    }
+
+    .reviews-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--green-mid);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .review-card:active {
+      transform: scale(0.98);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px 10px;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--green-pale);
+      flex-shrink: 0;
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-meta h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-deep);
+    }
+
+    .stars {
+      color: var(--green-mid);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .review-tag {
+      font-size: 10px;
+      color: var(--green-mid);
+      font-weight: 600;
+      background: var(--green-pale);
+      padding: 2px 8px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .review-img {
+      height: 120px;
+      overflow: hidden;
+    }
+
+    .review-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    }
+
+    .review-body {
+      padding: 14px 16px 16px;
+    }
+
+    .review-body p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--cream-dark);
+      padding: 36px 20px;
+    }
+
+    .faq-section .section-title {
+      color: var(--green-deep);
+    }
+
+    .faq-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-deep);
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .faq-q:hover {
+      background: var(--cream);
+    }
+
+    .faq-q:active {
+      background: var(--cream-dark);
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--green-deep);
+      color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--green-mid);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+    }
+
+    .faq-a-inner {
+      padding: 0 16px 14px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      border-top: 1px solid var(--cream-dark);
+      padding-top: 12px;
+    }
+
+    /* ── ORDER FORM ── */
+    .order-section {
+      background: var(--green-deep);
+      padding: 36px 20px 40px;
+    }
+
+    .order-section .section-label {
+      background: var(--gold);
+      color: var(--green-deep);
+    }
+
+    .order-section .section-title {
+      color: var(--cream);
+    }
+
+    .order-sub {
+      color: rgba(253, 246, 227, 0.75);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      color: var(--cream);
+      font-family: 'Noto Sans Devanagari', serif;
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(253, 246, 227, 0.4);
+    }
+
+    .form-group input:focus {
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      color: var(--green-deep);
+      font-family: 'Noto Sans Devanagari', serif;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(253, 246, 227, 0.5);
+      transition: transform 0.15s, box-shadow 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(253, 246, 227, 0.65);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .loading-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .loading-overlay.active {
+      display: flex;
+    }
+
+    .loading-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green-deep);
+      border-radius: 50%;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loading-dot:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .loading-dot:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-8px);
+      }
+    }
+
+    .form-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .form-trust span {
+      color: rgba(253, 246, 227, 0.7);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-trust span::before {
+      content: '✔';
+      color: var(--gold-light);
+    }
+
+    .form-urgency {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px dashed rgba(253, 246, 227, 0.5);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 14px;
+      color: var(--gold-light);
+      font-size: 12.5px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* ── SUCCESS MESSAGE ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .success-msg.active {
+      display: block;
+    }
+
+    .success-msg .big-check {
+      font-size: 60px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .success-msg h3 {
+      color: var(--gold-light);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .success-msg p {
+      color: rgba(253, 246, 227, 0.8);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: #111;
+      padding: 20px;
+    }
+
+    .disclaimer p {
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-deep);
+      padding: 16px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(253, 246, 227, 0.5);
+      font-size: 11px;
+    }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      padding: 12px 20px;
+      text-align: center;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .sticky-cta p {
+      color: var(--green-deep);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .sticky-cta.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── UNSPLASH IMAGE URLS ─── */
+    /* We'll use placeholder gradient backgrounds since external images may not load */
+    .img-placeholder-1 {
+      background: linear-gradient(135deg, #2d7d46, #1a5c2e);
+    }
+
+    .img-placeholder-2 {
+      background: linear-gradient(135deg, #3a8a55, #2d7d46);
+    }
+
+    .img-placeholder-3 {
+      background: linear-gradient(135deg, #4caf70, #2d7d46);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrap">
+
+    <!-- STICKY CTA -->
+    <div class="sticky-cta" id="stickyCta"
+      onclick="document.getElementById('orderSection').scrollIntoView({behavior:'smooth'})">
+      <p>👉 Free Consultation बुक करें — अभी क्लिक करें</p>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero-top-badge">🏥 Doctor-Guided Free Consultation Program</div>
+      <div class="hero-blob"></div>
+      <div class="hero-blob2"></div>
+
+      <div class="hero-inner">
+        <span class="hero-label">✦ Speech Improvement ✦</span>
+        <h1>
+          हकलापन, तुतलापन या
+          <span>रुक-रुक कर बोलना…</span>
+        </h1>
+        <p class="hero-sub" style="color:rgba(253,246,227,0.85);font-size:15px;line-height:1.8;margin-bottom:20px;">
+          कितनी बार आपने खुद को रोक लिया है…
+          <br>सिर्फ इसलिए कि शब्द साथ नहीं दे रहे थे?
+        </p>
+        <ul class="hero-sub">
+          <li>Meeting में चुप रह जाना…</li>
+          <li>Phone उठाने से डर लगना…</li>
+          <li>लोगों के सामने बोलते वक्त दिल तेज़ धड़कना…</li>
+        </ul>
+      </div>
+
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=450&h=280&fit=crop"
+          alt="Doctor consultation" loading="eager"
+          onerror="this.style.height='160px';this.style.background='linear-gradient(135deg,#2d7d46,#1a5c2e)'">
+      </div>
+
+      <div class="hero-impact-line">
+        👉 ये सिर्फ बोलने की problem नहीं — ये आपकी <strong>confidence और identity</strong> को affect करता है
+      </div>
+
+      <div class="hero-cta-block">
+        <p style="color:rgba(253,246,227,0.8);font-size:14px;margin-bottom:16px;line-height:1.6;">
+          अब experienced doctor के साथ <strong style="color:var(--gold-light)">1-to-1 FREE consultation</strong> में
+          समझें:<br>
+          आपकी problem का असली कारण क्या है… और इसे कैसे improve किया जा सकता है
+        </p>
+
+        <a class="btn-primary" onclick="document.getElementById('orderSection').scrollIntoView({behavior:'smooth'})">
+          👉 Free Doctor Consultation Book करें
+        </a>
+
+        <div class="micro-trust">
+          <span>✔ No charges</span>
+          <span>✔ 1-to-1 guidance</span>
+          <span>✔ Practical approach</span>
+        </div>
+        <p class="compliance">This is a guidance-based program. Results may vary person to person.</p>
+      </div>
+    </section>
+
+    <!-- ═══ OFFER STRIP ═══ -->
+    <div class="offer-strip">
+      <div class="offer-strip-title">🎁 आपको मिलेगा — बिल्कुल FREE</div>
+      <div class="offer-pills">
+        <div class="offer-pill"><span class="icon">🥗</span>Free Diet Chart</div>
+        <div class="offer-pill"><span class="icon">👨‍⚕️</span>Doctor Consult</div>
+      </div>
+    </div>
+
+    <!-- ═══ PROBLEM SECTION ═══ -->
+    <section class="problem-section fade-up">
+      <div class="problem-header">
+        <div class="section-label">😔 Problem Reality</div>
+        <h2 class="section-title">Problem सिर्फ बोलने में नहीं… impact आपकी पूरी life पर होता है</h2>
+      </div>
+
+      <div class="problem-cards">
+        <div class="prob-card">
+          <div class="prob-card-img">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=140&fit=crop"
+              alt="Thinking person" onerror="this.style.background='#1a5c2e';this.style.clipPath='none'">
+          </div>
+          <div class="prob-card-body">
+            <span class="tag">Problem 1</span>
+            <p>आप जानते हैं क्या बोलना है… लेकिन <strong>बोल नहीं पाते</strong></p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-img">
+            <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=200&h=140&fit=crop"
+              alt="Confidence drop" onerror="this.style.background='#2d7d46';this.style.clipPath='none'">
+          </div>
+          <div class="prob-card-body">
+            <span class="tag">Problem 2</span>
+            <p>सामने वाले के सामने <strong>confidence drop</strong> हो जाता है</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-img">
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=200&h=140&fit=crop"
+              alt="Repeat issue" onerror="this.style.background='#1a5c2e';this.style.clipPath='none'">
+          </div>
+          <div class="prob-card-body">
+            <span class="tag">Problem 3</span>
+            <p>बार-बार <strong>repeat</strong> करना पड़ता है</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-img">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&h=140&fit=crop" alt="Ignored"
+              onerror="this.style.background='#2d7d46';this.style.clipPath='none'">
+          </div>
+          <div class="prob-card-body">
+            <span class="tag">Problem 4</span>
+            <p>लोग interrupt करते हैं या <strong>ignore</strong> कर देते हैं</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-card-img">
+            <img src="https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?w=200&h=140&fit=crop"
+              alt="Avoiding talking" onerror="this.style.background='#1a5c2e';this.style.clipPath='none'">
+          </div>
+          <div class="prob-card-body">
+            <span class="tag">Problem 5</span>
+            <p>धीरे-धीरे आप <strong>बोलने से बचने</strong> लगते हैं</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-impact">
+        👉 यही cycle आपकी growth, relationships और opportunities को affect करता है
+      </div>
+    </section>
+
+    <!-- ═══ WHY SECTION ═══ -->
+    <section class="why-section fade-up">
+      <div class="section-label">🔍 Root Cause</div>
+      <h2 class="section-title">ये problem <span class="accent">क्यों होती है?</span></h2>
+      <p style="font-size:14px;color:var(--text-mid);line-height:1.6;">हर case अलग होता है, जैसे:</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=220&h=120&fit=crop"
+              alt="Brain coordination" onerror="this.style.background='#2d7d46'">
+          </div>
+          <div class="why-card-body">
+            <h4>🧠 Speech Flow</h4>
+            <p>Coordination issue in speech pattern</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=220&h=120&fit=crop" alt="Anxiety"
+              onerror="this.style.background='#1a5c2e'">
+          </div>
+          <div class="why-card-body">
+            <h4>😰 Anxiety</h4>
+            <p>Overthinking और nervousness</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=220&h=120&fit=crop"
+              alt="Bad habits" onerror="this.style.background='#2d7d46'">
+          </div>
+          <div class="why-card-body">
+            <h4>🔄 Bad Habits</h4>
+            <p>गलत speaking habits</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=220&h=120&fit=crop"
+              alt="No guidance" onerror="this.style.background='#1a5c2e'">
+          </div>
+          <div class="why-card-body">
+            <h4>❓ No Guidance</h4>
+            <p>Lack of proper guidance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-note">
+        👉 इसलिए हर किसी के लिए same solution काम नहीं करता
+      </div>
+    </section>
+
+    <!-- ═══ APPROACH SECTION ═══ -->
+    <section class="approach-section fade-up">
+      <div class="section-label">👨‍⚕️ Our Process</div>
+      <h2 class="section-title">हम क्या करते हैं</h2>
+      <h3 style="color:var(--gold-light);font-size:16px;margin-bottom:8px;">(Doctor-Guided Approach)</h3>
+      <p class="approach-sub">हम सिर्फ general tips नहीं देते — हम आपकी exact problem को समझते हैं</p>
+
+      <div class="approach-steps">
+        <div class="approach-step">
+          <div class="step-num-wrap">
+            <div class="step-num">1</div>
+            <div class="step-img">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=60&h=60&fit=crop"
+                alt="Consultation" onerror="this.style.background='rgba(255,255,255,0.2)'">
+            </div>
+          </div>
+          <div class="step-body">
+            <h4>Free 1-to-1 Consultation</h4>
+            <p>Experienced doctor के साथ personal conversation</p>
+          </div>
+        </div>
+        <div class="approach-step">
+          <div class="step-num-wrap">
+            <div class="step-num">2</div>
+            <div class="step-img">
+              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=60&h=60&fit=crop" alt="Analysis"
+                onerror="this.style.background='rgba(255,255,255,0.2)'">
+            </div>
+          </div>
+          <div class="step-body">
+            <h4>Speech Pattern पहचान</h4>
+            <p>आपकी exact issue को identify करना</p>
+          </div>
+        </div>
+        <div class="approach-step">
+          <div class="step-num-wrap">
+            <div class="step-num">3</div>
+            <div class="step-img">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=60&h=60&fit=crop" alt="Plan"
+                onerror="this.style.background='rgba(255,255,255,0.2)'">
+            </div>
+          </div>
+          <div class="step-body">
+            <h4>Personalized Plan</h4>
+            <p>आपके लिए custom improvement strategy</p>
+          </div>
+        </div>
+        <div class="approach-step">
+          <div class="step-num-wrap">
+            <div class="step-num">4</div>
+            <div class="step-img">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=60&h=60&fit=crop" alt="Practice"
+                onerror="this.style.background='rgba(255,255,255,0.2)'">
+            </div>
+          </div>
+          <div class="step-body">
+            <h4>Practical Exercises</h4>
+            <p>Real-life speaking techniques + daily practice</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="background:rgba(253,246,227,0.25);border:1px solid rgba(253,246,227,0.5);border-radius:12px;padding:14px;margin-top:20px;text-align:center;color:var(--gold-light);font-weight:700;font-size:14px;">
+        🎯 Focus: "Understanding → Training → Improvement"
+      </div>
+    </section>
+
+    <!-- ═══ VALUE SECTION ═══ -->
+    <section class="value-section fade-up">
+      <div class="section-label">💡 Session Value</div>
+      <h2 class="section-title">इस session में आपको <span class="accent">क्या मिलेगा?</span></h2>
+
+      <div class="value-items">
+        <div class="value-item">
+          <div class="value-item-img">
+            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=120&h=100&fit=crop" alt="Explanation"
+              onerror="this.style.background='#2d7d46'">
+          </div>
+          <div class="value-item-body">
+            <p><span>✔ </span>आपकी problem का clear explanation</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-img">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=120&h=100&fit=crop"
+              alt="Type clarity" onerror="this.style.background='#1a5c2e'">
+          </div>
+          <div class="value-item-body">
+            <p><span>✔ </span>कौन-सी type की speech issue है — complete clarity</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-img">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=120&h=100&fit=crop" alt="Direction"
+              onerror="this.style.background='#2d7d46'">
+          </div>
+          <div class="value-item-body">
+            <p><span>✔ </span>आपको क्या करना चाहिए — step-by-step direction</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-img">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=120&h=100&fit=crop"
+              alt="Honest guidance" onerror="this.style.background='#1a5c2e'">
+          </div>
+          <div class="value-item-body">
+            <p><span>✔ </span>Improvement possible है या नहीं — honest guidance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="value-tag">
+        ✅ No confusion. No random advice. <strong>Only Clarity.</strong>
+      </div>
+    </section>
+
+    <!-- ═══ TRUST SECTION ═══ -->
+    <section class="trust-section fade-up">
+      <div class="section-label">⭐ Why Us</div>
+      <h2 class="section-title">क्यों लोग हम पर <span style="color:var(--gold-light)">trust करते हैं?</span></h2>
+
+      <div class="trust-hero-img">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=450&h=220&fit=crop" alt="Doctor team"
+          onerror="this.style.background='linear-gradient(135deg,#2d7d46,#1a5c2e)';this.style.clipPath='none'">
+      </div>
+
+      <div class="trust-points">
+        <div class="trust-point">
+          <div class="icon">🎯</div>
+          <p>Personalized 1-to-1 approach — आपकी unique problem के लिए</p>
+        </div>
+        <div class="trust-point">
+          <div class="icon">👨‍⚕️</div>
+          <p>Experienced doctor guidance — genuine expertise</p>
+        </div>
+        <div class="trust-point">
+          <div class="icon">💪</div>
+          <p>Practical training focus — सिर्फ theory नहीं, real results</p>
+        </div>
+        <div class="trust-point">
+          <div class="icon">🤝</div>
+          <p>No false promises — सिर्फ सच्ची guidance</p>
+        </div>
+      </div>
+
+      <div class="trust-anti-line">
+        हम "magic cure" नहीं बेचते — हम <strong>सही direction</strong> देते हैं
+      </div>
+    </section>
+
+    <!-- ═══ FINAL CTA ═══ -->
+    <section class="final-cta fade-up">
+      <span class="final-cta-emoji">🚀</span>
+      <h2>अब decide आपको करना है…</h2>
+      <p>
+        या तो आप इसे ignore करते रहें…<br>
+        या एक बार सही तरीके से समझें कि<br>
+        <strong>आपकी problem क्या है</strong>
+      </p>
+
+      <a class="btn-primary" onclick="document.getElementById('orderSection').scrollIntoView({behavior:'smooth'})"
+        style="display:block;max-width:320px;margin:0 auto;">
+        👉 Book Your Free Doctor Consultation Now
+      </a>
+
+      <span class="urgency-badge">⚠️ Limited slots available for 1-to-1 sessions</span>
+    </section>
+
+    <!-- ═══ REVIEWS ═══ -->
+    <section class="reviews-section fade-up">
+      <div class="section-label">⭐ Testimonials</div>
+      <h2 class="section-title">लोगों ने क्या <span class="accent">experience किया</span></h2>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="Rahul"
+                onerror="this.style.background='#2d7d46'">
+            </div>
+            <div class="review-meta">
+              <h4>Rahul S.</h4>
+              <div class="stars">★★★★★</div>
+              <span class="review-tag">Confidence Improved</span>
+            </div>
+          </div>
+          <div class="review-img">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=450&h=130&fit=crop"
+              alt="Office meeting" onerror="this.style.background='linear-gradient(135deg,#2d7d46,#1a5c2e)'">
+          </div>
+          <div class="review-body">
+            <p>"पहले मैं कॉल उठाने से भी डरता था… हर बार words अटक जाते थे। Consultation के बाद मुझे समझ आया कि problem
+              क्या है… अब धीरे-धीरे confidence आ रहा है।"</p>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop" alt="Priya"
+                onerror="this.style.background='#1a5c2e'">
+            </div>
+            <div class="review-meta">
+              <h4>Priya M.</h4>
+              <div class="stars">★★★★★</div>
+              <span class="review-tag">Speaks Clearly Now</span>
+            </div>
+          </div>
+          <div class="review-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=450&h=130&fit=crop"
+              alt="Woman speaking" onerror="this.style.background='linear-gradient(135deg,#2d7d46,#1a5c2e)'">
+          </div>
+          <div class="review-body">
+            <p>"मैं meetings में कुछ बोल ही नहीं पाती थी… लेकिन यहाँ guidance मिलने के बाद अब मैं अपने thoughts clearly
+              express कर पा रही हूँ। बहुत फर्क पड़ा है।"</p>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=60&h=60&fit=crop" alt="Arjun"
+                onerror="this.style.background='#2d7d46'">
+            </div>
+            <div class="review-meta">
+              <h4>Arjun K.</h4>
+              <div class="stars">★★★★★</div>
+              <span class="review-tag">Student</span>
+            </div>
+          </div>
+          <div class="review-img">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=450&h=130&fit=crop"
+              alt="Student studying" onerror="this.style.background='linear-gradient(135deg,#1a5c2e,#2d7d46)'">
+          </div>
+          <div class="review-body">
+            <p>"मुझे लगा ये कभी ठीक नहीं होगा… लेकिन free session में ही clear हो गया कि मुझे क्या करना है। अब daily
+              practice से improvement दिख रहा है।"</p>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop" alt="Sunita"
+                onerror="this.style.background='#1a5c2e'">
+            </div>
+            <div class="review-meta">
+              <h4>Sunita D.</h4>
+              <div class="stars">★★★★★</div>
+              <span class="review-tag">Parent</span>
+            </div>
+          </div>
+          <div class="review-img">
+            <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=450&h=130&fit=crop" alt="Parent child"
+              onerror="this.style.background='linear-gradient(135deg,#2d7d46,#1a5c2e)'">
+          </div>
+          <div class="review-body">
+            <p>"मेरे बच्चे को बोलने में hesitation था… हमने consultation लिया और proper guidance मिली। अब वो पहले से
+              ज्यादा confidently बोल रहा है।"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="faq-section fade-up">
+      <div class="section-label">❓ FAQ</div>
+      <h2 class="section-title">आपके सवाल, <span class="accent">हमारे जवाब</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>क्या ये consultation पूरी तरह free है?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">हाँ, initial 1-to-1 consultation पूरी तरह free है। इसमें आपकी problem समझकर सही
+              guidance दी जाती है।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>क्या ये medical treatment है?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">ये guidance-based consultation है, जहाँ experienced doctor आपकी speech problem को
+              समझकर improvement के लिए सही direction देते हैं।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>कितने time में improvement दिखेगा?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">ये हर व्यक्ति पर depend करता है। कुछ लोगों को जल्दी improvement दिखता है, जबकि कुछ
+              cases में regular practice की जरूरत होती है।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>क्या मुझे कोई medicine लेनी होगी?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">हमारा focus practical training और guidance पर है। Medicine case-to-case depend करती
+              है, लेकिन हर किसी के लिए जरूरी नहीं होती।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Consultation कैसे होगा?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Consultation phone call या online meeting के जरिए किया जाता है (आपकी convenience के
+              अनुसार)।</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>क्या ये problem permanently ठीक हो सकती है?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">सही guidance और consistent practice से noticeable improvement possible है।</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ORDER FORM ═══ -->
+    <section class="order-section" id="orderSection">
+      <div class="section-label">📅 Book Now</div>
+      <h2 class="section-title">अपनी Free Doctor Consultation <span style="color:var(--gold-light)">बुक करें</span></h2>
+      <p class="order-sub">बस 2 details भरें — हमारी team आपको slot confirm करने के लिए contact करेगी</p>
+
+      <div id="formContainer">
+        <div class="form-group">
+          <label>आपका पूरा नाम</label>
+          <input type="text" id="nameInput" placeholder="जैसे: Rajesh Kumar" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="phoneInput" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel">
+        </div>
+
+        <div style="position:relative;">
+          <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+            👉 Book My Free Consultation
+            <div class="loading-overlay" id="loadingOverlay">
+              <div class="loading-dot"></div>
+              <div class="loading-dot"></div>
+              <div class="loading-dot"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="success-msg" id="successMsg">
+        <span class="big-check">✅</span>
+        <h3>Consultation Booked!</h3>
+        <p>बहुत अच्छा! आपकी request submit हो गई है।<br>हमारी team जल्द ही आपसे contact करेगी।</p>
+      </div>
+
+      <div class="form-trust">
+        <span>आपकी जानकारी 100% सुरक्षित रहेगी</span>
+        <span>कोई hidden charges नहीं</span>
+        <span>हमारी team सिर्फ consultation के लिए contact करेगी</span>
+      </div>
+
+      <div class="form-urgency">
+        ⚠️ Limited slots — आज ही request submit करें
+      </div>
+    </section>
+
+    <!-- ═══ DISCLAIMER ═══ -->
+    <div class="disclaimer">
+      <p>
+        <strong style="color:rgba(255,255,255,0.6);">Disclaimer:</strong> This is a guidance-based consultation program.
+        Results may vary from person to person based on individual conditions, consistency of practice, and severity of
+        the issue. This is not a substitute for professional medical treatment. The consultations provided are
+        educational and informational in nature. No specific medical diagnosis or prescription is provided. Please
+        consult a qualified medical professional for serious medical concerns. Individual results are not guaranteed.
+      </p>
+    </div>
+
+    <footer>
+      <p>© 2025 Speech Improvement Program · All Rights Reserved</p>
+      <p style="margin-top:4px;">Doctor-Guided · Privacy Protected · Results-Focused</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // FAQ Toggle
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Form Submit
+    function submitForm() {
+      const name = document.getElementById('nameInput').value.trim();
+      const phone = document.getElementById('phoneInput').value.trim();
+
+      if (!name) { alert('कृपया अपना नाम भरें।'); return; }
+      if (!phone || phone.length < 10) { alert('कृपया valid mobile number भरें।'); return; }
+
+      const btn = document.getElementById('submitBtn');
+      const overlay = document.getElementById('loadingOverlay');
+      overlay.classList.add('active');
+      btn.disabled = true;
+
+      setTimeout(() => {
+        overlay.classList.remove('active');
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('successMsg').classList.add('active');
+        document.getElementById('stickyCta').classList.add('hidden');
+      }, 2200);
+    }
+
+    // Phone number only digits
+    document.getElementById('phoneInput').addEventListener('input', function () {
+      this.value = this.value.replace(/\D/g, '');
+    });
+
+    // Intersection Observer for fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Sticky CTA hide near order form
+    const orderSection = document.getElementById('orderSection');
+    const stickyCta = document.getElementById('stickyCta');
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) stickyCta.classList.add('hidden');
+        else stickyCta.classList.remove('hidden');
+      });
+    }, { threshold: 0.3 });
+    stickyObserver.observe(orderSection);
+  </script>
+</body>
+
+</html>

@@ -4,7 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Ayurvedic consultation for speech issues - हकलाना और तुतलाना की समस्या का समाधान">
     <title>हकलाना | तुतलाना - Free Ayurvedic Health Expart Consultation</title>
+    <link rel="icon" href="./Image/after.avif" type="image/avif">
+    
+    <!-- DNS Prefetch for faster connections -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://script.google.com">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://script.google.com">
+    
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="./Image/Hero.avif" fetchpriority="high">
+    
+    <!-- Optimized font loading with display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -34,6 +50,15 @@
             display: flex;
             justify-content: center;
             padding: 0;
+            /* Performance optimization */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Optimize off-screen content */
+        .section {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 500px;
         }
 
         .container {
@@ -78,6 +103,27 @@
             display: block;
             max-width: 100%;
             object-fit: contain;
+        }
+
+        /* Optimize all images for performance */
+        img {
+            height: auto;
+            max-width: 100%;
+            /* Prevent layout shift */
+            aspect-ratio: attr(width) / attr(height);
+        }
+
+        /* GPU acceleration for animated elements */
+        .problem-card,
+        .value-item,
+        .timeline-item,
+        .trust-badge,
+        .why-item,
+        .cta-button,
+        .sticky-cta-btn {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
         }
 
         .hero-headline {
@@ -1577,6 +1623,23 @@
             }
         }
 
+        /* Reduce animations for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         /* STICKY BOOK NOW BUTTON */
         .sticky-cta {
             position: fixed;
@@ -1632,7 +1695,7 @@
         <!-- HERO SECTION -->
         <section class="hero-section">
             <div class="hero-content">
-                <img src="./Image/Hero.png" alt="">
+                <img src="./Image/Hero.avif" alt="Ayurvedic Health Expert Consultation for Speech Issues" width="450" height="auto" fetchpriority="high">
             </div>
         </section>
 
@@ -1643,7 +1706,7 @@
             <div class="problem-cards">
                 <div class="problem-card">
                     <div class="problem-icon-box">
-                        <div class="problem-icon"><img src="./Image/1.png" alt="Problem 1"></div>
+                        <div class="problem-icon"><img src="./Image/1.avif" alt="Problem 1" loading="lazy" decoding="async" width="200" height="200"></div>
                     </div>
                     <div class="problem-content">
                         <div class="problem-title">बोलने में अटकना</div>
@@ -1654,7 +1717,7 @@
 
                 <div class="problem-card">
                     <div class="problem-icon-box">
-                        <div class="problem-icon"><img src="./Image/2.png" alt="Problem 2"></div>
+                        <div class="problem-icon"><img src="./Image/2.avif" alt="Problem 2" loading="lazy" decoding="async" width="200" height="200"></div>
                     </div>
                     <div class="problem-content">
                         <div class="problem-title">Confidence में कमी</div>
@@ -1665,7 +1728,7 @@
 
                 <div class="problem-card">
                     <div class="problem-icon-box">
-                        <div class="problem-icon"><img src="./Image/3.png" alt="Problem 3"></div>
+                        <div class="problem-icon"><img src="./Image/3.avif" alt="Problem 3" loading="lazy" decoding="async" width="200" height="200"></div>
                     </div>
                     <div class="problem-content">
                         <div class="problem-title">बार-बार दोहराना</div>
@@ -1676,7 +1739,7 @@
 
                 <div class="problem-card">
                     <div class="problem-icon-box">
-                        <div class="problem-icon"><img src="./Image/4.png" alt="Problem 4"></div>
+                        <div class="problem-icon"><img src="./Image/4.avif" alt="Problem 4" loading="lazy" decoding="async" width="200" height="200"></div>
                     </div>
                     <div class="problem-content">
                         <div class="problem-title">लोगों का ध्यान न देना</div>
@@ -1687,7 +1750,7 @@
 
                 <div class="problem-card">
                     <div class="problem-icon-box">
-                        <div class="problem-icon"><img src="./Image/5.png" alt="Problem 5"></div>
+                        <div class="problem-icon"><img src="./Image/5.avif" alt="Problem 5" loading="lazy" decoding="async" width="200" height="200"></div>
                     </div>
                     <div class="problem-content">
                         <div class="problem-title">बोलने से बचना</div>
@@ -1711,7 +1774,7 @@
                     <div class="before-after-card before-card">
                         <div class="ba-label">पहले ❌</div>
                         <div class="ba-image-placeholder">
-                            <img src="./Image/before.png" alt="">
+                            <img src="./Image/before.avif" alt="Before consultation" loading="lazy" decoding="async" width="150" height="150">
                         </div>
                         <div class="ba-points">
                             <p>बोलने से डर</p>
@@ -1724,7 +1787,7 @@
                     <div class="before-after-card after-card">
                         <div class="ba-label">अब ✅</div>
                         <div class="ba-image-placeholder">
-                            <img src="./Image/after.png" alt="">
+                            <img src="./Image/after.avif" alt="After consultation" loading="lazy" decoding="async" width="150" height="150">
                         </div>
                         <div class="ba-points">
                             <p>स्पष्ट बोलना</p>
@@ -1744,7 +1807,7 @@
             <div class="why-grid">
                 <div class="why-item">
                     <div class="why-icon-box">
-                        <div class="why-icon"><img src="./Image/6.png" alt="Reason 1"></div>
+                        <div class="why-icon"><img src="./Image/6.avif" alt="Reason 1" loading="lazy" decoding="async" width="140" height="140"></div>
                     </div>
                     <div class="why-content">
                         <div class="why-title">Speech Flow Coordination</div>
@@ -1754,7 +1817,7 @@
 
                 <div class="why-item">
                     <div class="why-icon-box">
-                        <div class="why-icon"><img src="./Image/7.png" alt="Reason 2"></div>
+                        <div class="why-icon"><img src="./Image/7.avif" alt="Reason 2" loading="lazy" decoding="async" width="140" height="140"></div>
                     </div>
                     <div class="why-content">
                         <div class="why-title">Overthinking & Anxiety</div>
@@ -1764,7 +1827,7 @@
 
                 <div class="why-item">
                     <div class="why-icon-box">
-                        <div class="why-icon"><img src="./Image/8.png" alt="Reason 3"></div>
+                        <div class="why-icon"><img src="./Image/8.avif" alt="Reason 3" loading="lazy" decoding="async" width="140" height="140"></div>
                     </div>
                     <div class="why-content">
                         <div class="why-title">Wrong Speaking Habits</div>
@@ -1774,7 +1837,7 @@
 
                 <div class="why-item">
                     <div class="why-icon-box">
-                        <div class="why-icon"><img src="./Image/9.png" alt="Reason 4"></div>
+                        <div class="why-icon"><img src="./Image/9.avif" alt="Reason 4" loading="lazy" decoding="async" width="140" height="140"></div>
                     </div>
                     <div class="why-content">
                         <div class="why-title">Lack of Guidance</div>
@@ -1800,7 +1863,7 @@
             <div class="approach-timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon-box">
-                        <img src="./Image/10.png" alt="Step 1">
+                        <img src="./Image/10.avif" alt="Step 1" loading="lazy" decoding="async" width="150" height="150">
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-text">Free 1-to-1 consultation with experienced Ayurvedic Health Expart
@@ -1810,7 +1873,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-icon-box">
-                        <img src="./Image/11.png" alt="Step 2">
+                        <img src="./Image/11.avif" alt="Step 2" loading="lazy" decoding="async" width="150" height="150">
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-text">आपकी speech pattern और issue की पहचान</div>
@@ -1819,7 +1882,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-icon-box">
-                        <img src="./Image/12.png" alt="Step 3">
+                        <img src="./Image/12.avif" alt="Step 3" loading="lazy" decoding="async" width="150" height="150">
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-text">Personalized guidance और improvement plan</div>
@@ -1828,7 +1891,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-icon-box">
-                        <img src="./Image/13.png" alt="Step 4">
+                        <img src="./Image/13.avif" alt="Step 4" loading="lazy" decoding="async" width="150" height="150">
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-text">Practical exercises + real-life speaking techniques</div>
@@ -1848,7 +1911,7 @@
             <div class="value-list">
                 <div class="value-item">
                     <div class="value-img-box">
-                        <img src="./Image/14.png" alt="Benefit 1">
+                        <img src="./Image/14.avif" alt="Benefit 1" loading="lazy" decoding="async" width="180" height="180">
                     </div>
                     <div class="value-card">
                         <div class="value-title">Clear Problem Diagnosis</div>
@@ -1859,7 +1922,7 @@
 
                 <div class="value-item">
                     <div class="value-img-box">
-                        <img src="./Image/15.png" alt="Benefit 2">
+                        <img src="./Image/15.avif" alt="Benefit 2" loading="lazy" decoding="async" width="180" height="180">
                     </div>
                     <div class="value-card">
                         <div class="value-title">Speech Issue Clarity</div>
@@ -1870,7 +1933,7 @@
 
                 <div class="value-item">
                     <div class="value-img-box">
-                        <img src="./Image/16.png" alt="Benefit 3">
+                        <img src="./Image/16.avif" alt="Benefit 3" loading="lazy" decoding="async" width="180" height="180">
                     </div>
                     <div class="value-card">
                         <div class="value-title">Step-by-Step Direction</div>
@@ -1881,7 +1944,7 @@
 
                 <div class="value-item">
                     <div class="value-img-box">
-                        <img src="./Image/17.png" alt="Benefit 4">
+                        <img src="./Image/17.avif" alt="Benefit 4" loading="lazy" decoding="async" width="180" height="180">
                     </div>
                     <div class="value-card">
                         <div class="value-title">Honest Guidance</div>
@@ -2075,7 +2138,7 @@
                     }
                 }
             </style>
-            <script>
+            <script defer>
                 function submitForm(event) {
                     event.preventDefault();
                     const submitBtn = document.getElementById('submitBtn');
@@ -2115,7 +2178,6 @@
                                 window.location.href = './ThankYou.html';
                             }
                         }).catch(error => {
-                            console.error("Error:", error);
                             if (!redirected) {
                                 clearTimeout(timeout);
                                 redirected = true;
@@ -2177,12 +2239,12 @@
                 </div>
             </section>
 
-        <!-- Full-screen loader overlay -->
-        <div id="page-loader-overlay">
+            <!-- Full-screen loader overlay -->
+            <div id="page-loader-overlay">
             <div class="overlay-spinner"></div>
             <div class="overlay-text">आपकी request submit हो रही है…</div>
             <div class="overlay-subtext">⏳ कृपया प्रतीक्षा करें</div>
-        </div>
+            </div>
 
         <body>
 
@@ -2316,101 +2378,108 @@
         </a>
     </div>
 
-    <script>
+    <script defer>
         // Form Submission with Loading Effect
-        document.getElementById('bookingForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-            const submitBtn = document.getElementById('submitBtn');
-            const fullName = document.getElementById('fullName').value;
-            const mobile = document.getElementById('mobile').value;
+                    const submitBtn = document.getElementById('submitBtn');
+                    const fullName = document.getElementById('fullName').value;
+                    const mobile = document.getElementById('mobile').value;
 
-            // Validate mobile number
-            if (mobile.length !== 10) {
-                alert('कृपया 10 अंकों का मोबाइल नंबर दर्ज करें');
-                return;
+                    // Validate mobile number
+                    if (mobile.length !== 10) {
+                        alert('कृपया 10 अंकों का मोबाइल नंबर दर्ज करें');
+                        return;
+                    }
+
+                    // Show loading state
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+
+                    // Simulate form submission (replace with actual API call)
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+
+                        // Redirect to thank you page
+                        window.location.href = './thankyou.html';
+                    }, 2000);
+                });
             }
 
-            // Show loading state
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
+            // Smooth Scroll for CTA buttons
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
+            // Add fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-                // Redirect to thank you page
-                window.location.href = './thankyou.html';
-            }, 2000);
-        });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
 
-        // Smooth Scroll for CTA buttons
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            document.querySelectorAll('.problem-card, .why-item, .timeline-item, .value-item, .trust-badge, .review-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add click effect to cards - using event delegation
+            document.addEventListener('click', function(e) {
+                const card = e.target.closest('.problem-card, .value-item, .trust-badge');
+                if (card) {
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.transform = '';
+                    }, 200);
                 }
             });
-        });
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // Hide sticky CTA when booking or disclaimer section is visible
+            const bookingSection = document.getElementById('booking');
+            const stickyCta = document.getElementById('stickyCta');
+            const disclaimerSection = document.querySelector('.disclaimer');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
+            let visibleCount = 0;
 
-        document.querySelectorAll('.problem-card, .why-item, .timeline-item, .value-item, .trust-badge, .review-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add click effect to cards
-        document.querySelectorAll('.problem-card, .value-item, .trust-badge').forEach(card => {
-            card.addEventListener('click', function () {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
-
-        // Hide sticky CTA when booking or disclaimer section is visible
-        const bookingSection = document.getElementById('booking');
-        const stickyCta = document.getElementById('stickyCta');
-        const disclaimerSection = document.querySelector('.disclaimer');
-
-        let visibleCount = 0;
-
-        const stickyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    visibleCount++;
+            const stickyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        visibleCount++;
+                    } else {
+                        visibleCount = Math.max(0, visibleCount - 1);
+                    }
+                });
+                if (visibleCount > 0) {
+                    stickyCta.classList.add('hidden');
                 } else {
-                    visibleCount = Math.max(0, visibleCount - 1);
+                    stickyCta.classList.remove('hidden');
                 }
-            });
-            if (visibleCount > 0) {
-                stickyCta.classList.add('hidden');
-            } else {
-                stickyCta.classList.remove('hidden');
-            }
-        }, { threshold: 0.2 });
+            }, { threshold: 0.2 });
 
-        if (bookingSection) stickyObserver.observe(bookingSection);
-        if (disclaimerSection) stickyObserver.observe(disclaimerSection);
+            if (bookingSection) stickyObserver.observe(bookingSection);
+            if (disclaimerSection) stickyObserver.observe(disclaimerSection);
+        });
     </script>
 </body>
 
